@@ -12,3 +12,9 @@ I need this code, just don't know where, perhaps should make some middleware, do
 
 Go code!!
 */
+const server = require('./server.js');
+const port = process.env.PORT || 8250;
+
+server.listen(port, () => {
+  console.log(`server listening on port ${port}`);
+});
