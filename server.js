@@ -1,8 +1,12 @@
+//things the server need to work
 const express = require('express');
 const server = express();
-
 server.use(express.json());
+//use my middleware
 server.use(logger);
+//use my routes
+const ProjectRouter = require('./routes/projectRoutes');
+server.use('/projects', ProjectRouter);
 
 server.get('/', (req, res) => {
   res.send(`
